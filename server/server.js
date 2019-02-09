@@ -3,7 +3,17 @@ const morgan = require('morgan'); // middleware for route
 const bodyParser = require('body-parser'); // data reader
 const mongoose = require('mongoose'); // mongodb agent
 
+const config = require('./config'); // db configuration
+
 const app = express();
+
+mongoose.connect(config.database, err => {
+    if (err) {
+        console.error(err);
+    } else {
+        console.log('Connected to database');
+    }
+})
 
 app.use(bodyParser.json()); // readind data in json format
 app.use(bodyParser.urlencoded({extended: false})); // read all data type
@@ -14,6 +24,6 @@ app.get('/', (req, res, next) => {
     res.send("First HTTP");
 });
 
-app.listen(3030, err => {
-    console.log("Hello");
+app.listen(config.port, err => {
+    console.log("Hello World");
 });
