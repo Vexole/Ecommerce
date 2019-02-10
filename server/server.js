@@ -5,6 +5,7 @@ const mongoose = require('mongoose'); // mongodb agent
 const cors = require('cors'); // adding cors npm install cors --save
 
 const config = require('./config'); // db configuration
+const userRoutes = require('./routes/account');
 
 const app = express();
 
@@ -24,6 +25,8 @@ app.use(cors());
 app.get('/', (req, res, next) => {
     res.send("First HTTP");
 });
+
+app.use('/api/accounts', userRoutes);
 
 app.listen(config.port, err => {
     console.log("Hello World");
