@@ -7,7 +7,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div [ngbCollapse]="isCollapsed" style="align-items: left; margin-left: 50px;" class="collapse navbar-collapse flex-column" id="navbarNav">
-      <div class="input-group w-75">
+      <div class="input-group w-100">
         <input type="text" name="search" class="form-control" [(ngModel)]="searchTerm" (keyup.enter)="search()" />
         <span id="searchBtn" class="bg-warning" (click)="search()">
           <i class="fa fa-search"></i>
@@ -19,7 +19,7 @@
             <a (click)="collapse()" routerLink="/categories" routerLinkActive="active" class="nav-link">Categories</a>
           </li>
           <li class="nav-item ml-0 ml-md-auto" ngbDropdown #dropdown="ngbDropdown">
-            <a class="nav-linl dropdown-toggle" ngbDropdownToggle>
+            <a class="nav-link dropdown-toggle" ngbDropdownToggle>
               <i class="fa fa-user mr-1"></i>
               <span *ngIf="!token">Account</span>
             </a>
