@@ -66,6 +66,8 @@ export class RegistrationComponent implements OnInit {
           this.data.error(data['message']);
         }
       }
+    } catch (error) {
+      this.data.error(error['error']);
     }
   }
 }
