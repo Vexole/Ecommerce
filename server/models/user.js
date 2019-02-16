@@ -5,19 +5,19 @@ const bcrypt = require('bcrypt-nodejs');
 const crypto = require('crypto');
 
 const UserSchema = new Schema({
-    email: { type: string, unique: true, lowercase: true},
-    name: string,
-    password: string,
-    picture: string,
-    isSeller: { type: boolean, default: false},
+    email: { type: String, unique: true, lowercase: true},
+    name: String,
+    password: String,
+    picture: String,
+    isSeller: { type: Boolean, default: false},
     address: {
-        addr1: string,
-        addr2: string,
-        city: string,
-        state: string,
-        country: string,
-        country: string,
-        postalCode: string
+        addr1: String,
+        addr2: String,
+        city: String,
+        state: String,
+        country: String,
+        country: String,
+        postalCode: String
     },
     created: { type: Date, default: Date.now }
 });

@@ -69,5 +69,6 @@ export class RegistrationComponent implements OnInit {
     } catch (error) {
       this.data.error(error['error']);
     }
+    this.btnDisabled = false;
   }
 }
