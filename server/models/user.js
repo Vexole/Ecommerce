@@ -16,7 +16,6 @@ const UserSchema = new Schema({
         city: String,
         state: String,
         country: String,
-        country: String,
         postalCode: String
     },
     created: { type: Date, default: Date.now }
